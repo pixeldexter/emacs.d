@@ -68,6 +68,11 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
+;; buffer cycling
+(require 'swbuff)
+(require 'swbuff-x)
+(global-set-key [(control tab)] 'swbuff-switch-to-next-buffer)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -107,6 +112,7 @@
  '(org-todo-keyword-faces (quote (("INPROGRESS" . match) ("CANCELLED" . font-lock-function-name-face) ("PENDING" . "font-lock-constant-face"))))
  '(org-todo-keywords (quote ((sequence "TODO" "INPROGRESS(i!)" "|" "DONE(d!)") (sequence "|" "CANCELLED(c@!)") (sequence "PENDING(p@/!)" "|"))))
  '(scroll-conservatively 50)
+ '(swbuff-clear-delay-ends-switching t)
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
  '(transient-mark-mode t)
@@ -169,6 +175,7 @@
  '(dired-symlink ((t (:inherit font-lock-builtin-face))))
  '(ld-script-location-counter ((t (:inherit font-lock-negation-char-face :weight bold)))))
  '(org-tag ((t (:underline t :weight bold))))
+ '(swbuff-current-buffer-face ((t (:underline t :weight bold)))))
 
 ;; TODO modes
 ;; latex-mode
