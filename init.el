@@ -62,6 +62,12 @@
 (require 'uniquify)
 ;; (require 'textile-mode)
 
+(require 'org)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-iswitchb)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -80,6 +86,26 @@
  '(icomplete-mode t)
  '(ido-mode t nil (ido))
  '(mouse-wheel-mode t)
+ '(org-agenda-files (quote ("~/org/" "~/proj/proj.org")))
+ '(org-agenda-skip-scheduled-if-done t)
+ '(org-agenda-span (quote fortnight))
+ '(org-archive-location "::* Archived Tasks")
+ '(org-capture-templates (quote (("j" "Journal" entry (file+datetree "~/org/journal.org") "* %U
+  %i%?
+  %a") ("e" "Future event" entry (file+headline "~/org/notes.org" "Event") "* %?
+  %^t") ("t" "TODO entry" entry (file+headline "~/org/notes.org" "Tasks") "* TODO %?
+  %t
+  %a"))))
+ '(org-completion-use-ido t)
+ '(org-default-notes-file "~/org/notes.org")
+ '(org-enforce-todo-checkbox-dependencies t)
+ '(org-enforce-todo-dependencies t)
+ '(org-log-done (quote time))
+ '(org-log-into-drawer t)
+ '(org-modules (quote (org-bbdb org-bibtex org-docview org-gnus org-habit org-id org-info org-irc org-mhe org-rmail org-w3m org-bookmark org-bullets org-eshell org-expiry org-git-link org-man)))
+ '(org-tag-alist (quote (("@home" . 104) ("@computer" . 99) ("@workspace" . 119) ("sdp" . 115) ("dev" . 100) ("electro" . 101) ("health" . 72))))
+ '(org-todo-keyword-faces (quote (("INPROGRESS" . match) ("CANCELLED" . font-lock-function-name-face) ("PENDING" . "font-lock-constant-face"))))
+ '(org-todo-keywords (quote ((sequence "TODO" "INPROGRESS(i!)" "|" "DONE(d!)") (sequence "|" "CANCELLED(c@!)") (sequence "PENDING(p@/!)" "|"))))
  '(scroll-conservatively 50)
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
@@ -142,6 +168,7 @@
  '(dired-header ((t (:inherit font-lock-keyword-face :height 2.0 :width extra-expanded))))
  '(dired-symlink ((t (:inherit font-lock-builtin-face))))
  '(ld-script-location-counter ((t (:inherit font-lock-negation-char-face :weight bold)))))
+ '(org-tag ((t (:underline t :weight bold))))
 
 ;; TODO modes
 ;; latex-mode
