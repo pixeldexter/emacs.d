@@ -68,6 +68,10 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
+;; googling
+(require 'google-this)
+(global-set-key "\C-xg" 'google-this)
+
 ;; buffer cycling
 (require 'swbuff)
 (require 'swbuff-x)
@@ -90,6 +94,10 @@
  '(ibuffer-saved-filters (quote (("gnus" ((or (mode . message-mode) (mode . mail-mode) (mode . gnus-group-mode) (mode . gnus-summary-mode) (mode . gnus-article-mode)))) ("programming" ((or (mode . emacs-lisp-mode) (mode . cperl-mode) (mode . c-mode) (mode . java-mode) (mode . idl-mode) (mode . lisp-mode)))))))
  '(icomplete-mode t)
  '(ido-mode t nil (ido))
+ '(ido-use-filename-at-point (quote guess))
+ '(ido-use-url-at-point t)
+ '(indent-tabs-mode nil)
+ '(inhibit-startup-screen t)
  '(mouse-wheel-mode t)
  '(org-agenda-files (quote ("~/org/" "~/proj/proj.org")))
  '(org-agenda-skip-scheduled-if-done t)
@@ -112,6 +120,7 @@
  '(org-todo-keyword-faces (quote (("INPROGRESS" . match) ("CANCELLED" . font-lock-function-name-face) ("PENDING" . "font-lock-constant-face"))))
  '(org-todo-keywords (quote ((sequence "TODO" "INPROGRESS(i!)" "|" "DONE(d!)") (sequence "|" "CANCELLED(c@!)") (sequence "PENDING(p@/!)" "|"))))
  '(scroll-conservatively 50)
+ '(show-trailing-whitespace t)
  '(swbuff-clear-delay-ends-switching t)
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
@@ -173,7 +182,7 @@
  '(diff-removed ((t (:inherit diff-changed :foreground "#dc322f"))))
  '(dired-header ((t (:inherit font-lock-keyword-face :height 2.0 :width extra-expanded))))
  '(dired-symlink ((t (:inherit font-lock-builtin-face))))
- '(ld-script-location-counter ((t (:inherit font-lock-negation-char-face :weight bold)))))
+ '(ld-script-location-counter ((t (:inherit font-lock-negation-char-face :weight bold))))
  '(org-tag ((t (:underline t :weight bold))))
  '(swbuff-current-buffer-face ((t (:underline t :weight bold)))))
 
